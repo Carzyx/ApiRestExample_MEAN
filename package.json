@@ -1,0 +1,14 @@
+{
+    "name": "node-api-rest-example",
+    "version": "1.0.0",
+    "description": "Proyecto de API RESTful con Node.js y Express",
+    "main": "app.js",
+    "author": "Miguel Angel Archilla",
+    "license": "MIT",
+    "dependencies": {
+        "mongoose": "^4.6.0",
+        "express": "^4.7.1",
+        "method-override": "^2.1.2",
+        "body-parser": "^1.5.1"
+    }
+}
