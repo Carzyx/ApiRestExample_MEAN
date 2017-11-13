@@ -1,16 +1,19 @@
 'use strict'
 
-const app = require('./app'),
+const app = require('./routes/app'),
 mongoose = require('mongoose'),
-config = require('./config');
+api = require('./routes/app'),
+config = require('./config/config');
 
+
+mongoose.Promise = global.Promise;
 
 // Connection to DB
-mongoose.connect(config.db)
-.then(() => console.log('Conexión a la base de datos establecida...'))
-.catch(err => console.log(`Error al conectar a la base de datos: ${err}`));
+mongoose.connect(config.uri)
+.then(() => console.log(`Established connection with database on ${config.uri}`))
+.catch(err => console.log(`Error connecting with the database: ${err}`));
 
-
-app.listen(3000, () => {
+//Starting Node
+app.listen(config.port, () => {
     console.log(`Node server running on http://localhost:${config.port}`)  
   });
