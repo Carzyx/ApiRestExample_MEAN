@@ -1,0 +1,53 @@
+<app-crud [subjects]="subjects" [students]="students"></app-crud>
+
+<!--Management-->
+<form class="form-welcome management">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab">Management</a>
+        </li>
+    </ul>
+    <div>
+        <legend>Matriculate Student in to a subject</legend>
+        <div class="form-group">
+            <label>Select Subject</label>
+            <select class="form-control" [(ngModel)]="subjectSelected" name="first" (ngModelChange)="onChange($event)">
+                <option *ngFor="let subject of subjects" [ngValue]="subject">{{subject.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Select Student</label>
+            <select class="form-control" [(ngModel)]="studentSelected" name="second" (ngModelChange)="onChange($event)">
+                <option *ngFor="let student of students" [ngValue]="student">{{student.name}}</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="matriculate()">Free Matriculate</button>
+
+        <!--Details-->
+        <div class="student-detail jumbotron">
+            <h1>Subjects:</h1>
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <blockquote class="card-blockquote">
+                        <h5>Used guide</h5>
+                        <p>*Click on subject name to show students</p>
+                        <p>*Click on student name to show student details</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="form-group-filter">
+                    <label>Select Filter:</label>
+                    <select class="form-control" [(ngModel)]="filterSelected" name="filter" (ngModelChange)="onChange($event)">
+                        <option>name</option>
+                        <option>qt</option>
+                    </select>
+                    <input class="form-control-filter form-control" type="text" placeholder="Input your text search" #box (keyup)="onKey(box.value)">
+                </div>
+            <div class="subject-list ">
+                <div class="subject" *ngFor="let subject of subjects">
+                    <app-subjectDetail [subject]="subject"></app-subjectDetail>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

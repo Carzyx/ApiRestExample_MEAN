@@ -1,0 +1,13 @@
+<div class="student" id="student-list">
+        <h6 (click)="showHide()">{{student.name}}</h6>
+        
+        <div class="student-detail"[hidden]="hideElement">
+            <h6>Address: {{student.address}}</h6>
+            <hr>
+            <div class="phone" *ngFor="let phone of student.phone; let iPhone = index" id="Phone{{iPhone}} ">
+                <h6>Address: {{phone.name}}</h6>
+                <h6>Phone number: {{phone.phoneNumber}}</h6>
+                <hr>
+            </div>
+        </div>
+    </div>

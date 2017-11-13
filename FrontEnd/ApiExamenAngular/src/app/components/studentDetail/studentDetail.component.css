@@ -1,0 +1,39 @@
+div.manage-student{
+    max-height: 550px;
+    max-width: 950px;
+    min-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+div.student-detail.jumbotron{
+    max-height: auto;
+    max-width: 950px;
+    min-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+div.students-list{
+    margin-left: 2%;
+    max-width: 500px;
+}
+div.student-detail{
+    margin-left: 7%;
+    max-width: 500px;
+}
+div.phone{
+    margin-left: 10%;
+    max-width: 250px;
+    
+}
+div.student.modal.-content{
+    width: 20%;
+    max-width: 600px;
+    
+}
+button.btn.btn-outline-primary.student{
+    margin-left: 100%;
+}

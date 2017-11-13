@@ -1,0 +1,19 @@
+<div class="student-detail jumbotron">
+    <div class="subject-list ">
+        <div class="subject">
+            <h4 (click)="showHide()">{{subject.name}}</h4>
+            <p>Description: {{subject.description}}</p>
+            <p>Quatrimestre: {{subject.qt}}</p>
+            <hr>
+            <div class="students-list " [hidden]="hideElement">
+                <h5 id="student-list">Students &#8595;</h5>
+
+                <div id="student-list" *ngFor="let student of subject.students; let iStudent = index">
+                    <div class="student-detail">
+                        <app-studentDetail [student]="student"></app-studentDetail>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
