@@ -6,6 +6,8 @@ mongoose.Promise = global.Promise;
 
 let subjectSchema = new mongoose.Schema({
     name: { type: String },
+    description: { type: String },
+    qt: { type: String },
     students: [{ type: Schema.Types.ObjectId, ref: 'students' }]
 });
 

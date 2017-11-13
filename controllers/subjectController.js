@@ -14,3 +14,7 @@ exports.findAllSubjectsPopulation = (req, res) => {
 exports.addSubject = (req,res) => {
     ApiHelper.addModel(req, res, Subject)
 }
+
+exports.updateSubjectById = (req, res) => {
+    ApiHelper.updateModelById(req, res, Subject)
+}

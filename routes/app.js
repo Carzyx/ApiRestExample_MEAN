@@ -38,7 +38,8 @@ let subjectCtrl = require('../controllers/subjectController');
 
 router.route('/subject')
     .get(subjectCtrl.findAllSubjectsPopulation)
-    .post(subjectCtrl.addSubject);
+    .post(subjectCtrl.addSubject)
+    .put(subjectCtrl.updateSubjectById);
 
 router.route('/student')
     .get(studentCtrl.findAllStudents)
